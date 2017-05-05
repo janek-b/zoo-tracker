@@ -15,4 +15,8 @@ export class AnimalService {
     this.animals.push(animal);
   }
 
+  getAnimals() {
+    return this.animals;
+  }
+
 }
