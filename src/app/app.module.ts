@@ -8,6 +8,8 @@ import { AngularFireModule } from 'angularfire2';
 import { CovalentCoreModule } from '@covalent/core';
 
 import { AppComponent } from './app.component';
+import { AnimalNewComponent } from './animal-new/animal-new.component';
+import { AnimalListComponent } from './animal-list/animal-list.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -18,7 +20,9 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AnimalNewComponent,
+    AnimalListComponent
   ],
   imports: [
     BrowserModule,

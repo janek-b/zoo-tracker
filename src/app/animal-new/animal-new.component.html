@@ -1,0 +1,54 @@
+<md-card>
+  <md-card-title>Add an Animal</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <form>
+      <div layout="row" layout-margin>
+        <md-input-container flex>
+          <input mdInput placeholder="Name">
+        </md-input-container>
+        <md-input-container flex>
+          <input mdInput placeholder="Species">
+        </md-input-container>
+      </div>
+      <div layout="row" layout-margin layout-align="space-around center">
+        <md-select flex="30" placeholder="Diet" [(ngModel)]="diet" name="diet">
+          <md-option [value]="carnivore">Carnivore</md-option>
+          <md-option [value]="herbivore">Herbivore</md-option>
+          <md-option [value]="omnivore">Omnivore</md-option>
+        </md-select>
+        <md-select flex="30" placeholder="Sex" [(ngModel)]="sex" name="sex">
+          <md-option [value]="male">Male</md-option>
+          <md-option [value]="female">Female</md-option>
+        </md-select>
+        <md-select flex="30" placeholder="Location" [(ngModel)]="location" name="location">
+          <md-option [value]="great-northwest">Great Northwest</md-option>
+          <md-option [value]="pacific-shores">Pacific Shores</md-option>
+          <md-option [value]="discovery-zone">Discovery Zone</md-option>
+          <md-option [value]="primate-forest">Primate Forest</md-option>
+          <md-option [value]="elephant-lands">Elephant Lands</md-option>
+          <md-option [value]="africa">Africa</md-option>
+        </md-select>
+      </div>
+      <div layout="row" layout-margin layout-padding layout-align="space-between center" layout-wrap>
+        <md-input-container class="number-input-size" flex-gt-lg="15" flex-gt-xs="45">
+          <input mdInput placeholder="Age" type="number">
+        </md-input-container>
+        <md-input-container class="number-input-size" flex-gt-lg="15" flex-gt-xs="45">
+          <input mdInput placeholder="Number of Caretakers" type="number">
+        </md-input-container>
+        <md-input-container flex-gt-lg="30" flex-gt-xs="45">
+          <input mdInput placeholder="Likes">
+        </md-input-container>
+        <md-input-container flex-gt-lg="30" flex-gt-xs="45">
+          <input mdInput placeholder="Dislikes">
+        </md-input-container>
+      </div>
+    </form>
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions>
+    <button md-button color="accent" class="text-upper">Action</button>
+    <button md-button class="text-upper">Cancel</button>
+  </md-card-actions>
+</md-card>
