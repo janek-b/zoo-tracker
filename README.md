@@ -12,7 +12,7 @@ This project is a web application that allows zoo employees to track and manage 
 ## Planning
 
 1. Configuration/Dependencies
-  ##### _Setup/Installation_
+  * ##### _Setup/Installation_
     * This application uses firebase for it's database.
     * Set up a new project in firebase and click on _**Add Firebase to your web app**_ to get your firebase config.
     * Create a new file `src/app/api-keys.ts` and place your firebase config into it. The file should look like this.
@@ -42,7 +42,7 @@ This project is a web application that allows zoo employees to track and manage 
 
     * Navigate to `http://localhost:4200/`
 
-  ##### _Packages Dependencies_
+  * ##### _Packages Dependencies_
     * `angularfire2`
     * `firebase`
     * `@angular/animations`
