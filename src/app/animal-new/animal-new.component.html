@@ -5,50 +5,49 @@
     <form>
       <div layout="row" layout-margin>
         <md-input-container flex>
-          <input mdInput placeholder="Name">
+          <input mdInput placeholder="Name" #newName>
         </md-input-container>
         <md-input-container flex>
-          <input mdInput placeholder="Species">
+          <input mdInput placeholder="Species" #newSpecies>
         </md-input-container>
       </div>
-      <div layout="row" layout-margin layout-align="space-around center">
+      <div layout="row" layout-margin layout-align="space-between center">
         <md-select flex="30" placeholder="Diet" [(ngModel)]="diet" name="diet">
-          <md-option [value]="carnivore">Carnivore</md-option>
-          <md-option [value]="herbivore">Herbivore</md-option>
-          <md-option [value]="omnivore">Omnivore</md-option>
+          <md-option value="carnivore">Carnivore</md-option>
+          <md-option value="herbivore">Herbivore</md-option>
+          <md-option value="omnivore">Omnivore</md-option>
         </md-select>
         <md-select flex="30" placeholder="Sex" [(ngModel)]="sex" name="sex">
-          <md-option [value]="male">Male</md-option>
-          <md-option [value]="female">Female</md-option>
+          <md-option value="male">Male</md-option>
+          <md-option value="female">Female</md-option>
         </md-select>
         <md-select flex="30" placeholder="Location" [(ngModel)]="location" name="location">
-          <md-option [value]="great-northwest">Great Northwest</md-option>
-          <md-option [value]="pacific-shores">Pacific Shores</md-option>
-          <md-option [value]="discovery-zone">Discovery Zone</md-option>
-          <md-option [value]="primate-forest">Primate Forest</md-option>
-          <md-option [value]="elephant-lands">Elephant Lands</md-option>
-          <md-option [value]="africa">Africa</md-option>
+          <md-option value="great-northwest">Great Northwest</md-option>
+          <md-option value="pacific-shores">Pacific Shores</md-option>
+          <md-option value="discovery-zone">Discovery Zone</md-option>
+          <md-option value="primate-forest">Primate Forest</md-option>
+          <md-option value="elephant-lands">Elephant Lands</md-option>
+          <md-option value="africa">Africa</md-option>
         </md-select>
       </div>
       <div layout="row" layout-margin layout-padding layout-align="space-between center" layout-wrap>
         <md-input-container class="number-input-size" flex-gt-lg="15" flex-gt-xs="45">
-          <input mdInput placeholder="Age" type="number">
+          <input mdInput placeholder="Age" type="number" #newAge>
         </md-input-container>
         <md-input-container class="number-input-size" flex-gt-lg="15" flex-gt-xs="45">
-          <input mdInput placeholder="Number of Caretakers" type="number">
+          <input mdInput placeholder="Number of Caretakers" type="number" #newCaretaker>
         </md-input-container>
         <md-input-container flex-gt-lg="30" flex-gt-xs="45">
-          <input mdInput placeholder="Likes">
+          <input mdInput placeholder="Likes" #newLikes>
         </md-input-container>
         <md-input-container flex-gt-lg="30" flex-gt-xs="45">
-          <input mdInput placeholder="Dislikes">
+          <input mdInput placeholder="Dislikes" #newDislikes>
         </md-input-container>
       </div>
     </form>
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions>
-    <button md-button color="accent" class="text-upper">Action</button>
-    <button md-button class="text-upper">Cancel</button>
+    <button md-button color="accent" class="text-upper" (click)="addAnimal(newName.value, newSpecies.value, diet, sex, location, newAge.value, newCaretaker.value, newLikes.value, newDislikes.value)">Add Animal</button>
   </md-card-actions>
 </md-card>
