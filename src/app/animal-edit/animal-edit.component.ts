@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Animal } from '../animal.model';
 import { AnimalService } from '../animal.service';
 
@@ -9,6 +9,7 @@ import { AnimalService } from '../animal.service';
 })
 export class AnimalEditComponent implements OnInit {
   @Input() animal: Animal;
+  @Output() closeEditSender = new EventEmitter();
 
   constructor(private animalService: AnimalService) { }
 
@@ -17,6 +18,7 @@ export class AnimalEditComponent implements OnInit {
 
   updateAnimal() {
     this.animalService.updateAnimal(this.animal);
+    this.closeEditSender.emit();
   }
 
 }

@@ -82,13 +82,13 @@
       <!-- <div flex></div> -->
     </div>
   </md-card-content>
-  <td-expansion-panel>
+  <td-expansion-panel #editPanel>
     <ng-template td-expansion-panel-label>
       Edit {{animal.name}}
     </ng-template>
     <div layout="row" layout-align="center">
       <div flex="90">
-        <app-animal-edit [animal]="animal"></app-animal-edit>
+        <app-animal-edit [animal]="animal" (closeEditSender)="editPanel.close()"></app-animal-edit>
       </div>
     </div>
   </td-expansion-panel>

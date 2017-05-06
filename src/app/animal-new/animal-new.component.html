@@ -61,7 +61,7 @@
   <md-divider></md-divider>
   <md-card-actions>
     <div layout="row" layout-margin layout-align="center">
-      <button flex='70' md-raised-button color="accent" class="text-upper" (click)="addAnimal(newName.value, newSpecies.value, diet, sex, location, newAge.value, newCaretaker.value, newLikes.value, newDislikes.value, newImg.value)">Add Animal</button>
+      <button flex='70' md-raised-button color="accent" class="text-upper" (click)="addAnimal(newName.value, newSpecies.value, diet, sex, location, newAge.value, newCaretaker.value, newLikes.value, newDislikes.value, newImg.value); newName.value=''; newSpecies.value=''; diet=null; sex=null; location=null; newAge.value=''; newCaretaker.value=''; newLikes.value=''; newDislikes.value=''; newImg.value='';">Add Animal</button>
     </div>
   </md-card-actions>
 </md-card>
