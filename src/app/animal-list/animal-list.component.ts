@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Animal } from '../animal.model';
 import { AnimalService } from '../animal.service';
 
-import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableSelectEvent, ITdDataTableColumn } from '@covalent/core';
+import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn } from '@covalent/core';
 import { IPageChangeEvent } from '@covalent/core';
 
 @Component({
@@ -11,6 +11,8 @@ import { IPageChangeEvent } from '@covalent/core';
   styleUrls: ['./animal-list.component.css']
 })
 export class AnimalListComponent implements OnInit {
+  @Output() animalDetailSender = new EventEmitter();
+
   animals: Animal[] = []
 
   columns: ITdDataTableColumn[] = [
@@ -50,7 +52,6 @@ export class AnimalListComponent implements OnInit {
 
   search(searchTerm: string): void {
     this.searchTerm = searchTerm;
-    console.log(this.searchTerm)
     this.filter();
   }
 
@@ -70,8 +71,8 @@ export class AnimalListComponent implements OnInit {
     this.filteredData = newData;
  }
 
-  showDetails(animal: any): void {
-    console.log(animal)
+  showDetails(animal: Animal) {
+    this.animalDetailSender.emit(animal);
   }
 
 

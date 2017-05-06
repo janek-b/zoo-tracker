@@ -15,12 +15,21 @@
 
 <div layout="row" layout-align="center">
   <div flex="80" [tdToggle]="showNewAnimal">
-    <app-animal-new></app-animal-new>
+    <app-animal-new (closeFormSender)="toggleNewAnimal()"></app-animal-new>
   </div>
 </div>
 
 <div layout="row" layout-align="center">
   <div flex="90">
-    <app-animal-list></app-animal-list>
+    <app-animal-list (animalDetailSender)="showAnimalDetails($event)"></app-animal-list>
+  </div>
+</div>
+
+
+<div layout="row" layout-align="center">
+  <div flex="90" [tdToggle]="showDetails">
+    <div *ngIf="selectedAnimal">
+      <app-animal-detail [animal]="selectedAnimal"></app-animal-detail>
+    </div>
   </div>
 </div>

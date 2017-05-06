@@ -1,5 +1,12 @@
 <md-card>
-  <md-card-title>Add an Animal</md-card-title>
+  <md-card-title>
+    <div layout="row" layout-align="space-between">
+      <span>Add an Animal</span>
+      <button md-icon-button (click)="closeForm()">
+        <md-icon>close</md-icon>
+      </button>
+    </div>
+  </md-card-title>
   <md-divider></md-divider>
   <md-card-content>
     <form>
