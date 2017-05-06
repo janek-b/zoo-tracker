@@ -10,44 +10,76 @@
   <md-card-subtitle class="text-caps">{{animal.species}}</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <div layout="row" layout-align="space-around" layout-wrap>
-      <div flex="33">
-        <div layout="row" layout-align="center center">
-          <span class="text-right pad-right" flex>Sex: </span>
-          <span class="text-left text-caps" flex>{{animal.sex}}</span>
-        </div>
-        <div layout="row" layout-align="center center">
-          <span class="text-right pad-right" flex>Age: </span>
-          <span class="text-left text-caps" flex>{{animal.age}}</span>
-        </div>
-        <div layout="row" layout-align="center center">
-          <span class="text-right pad-right" flex>Caretakers: </span>
-          <span class="text-left text-caps" flex>{{animal.caretaker}}</span>
-        </div>
-        <div layout="row" layout-align="center center">
-          <span class="text-right pad-right" flex>Diet: </span>
-          <span class="text-left text-caps" flex>{{animal.diet}}</span>
+    <div layout-md="column" layout-gt-sm="row" layout-align-md="center stretch" layout-align-gt-sm="center center">
+      <div flex-gt-sm="50" flex-md="100">
+        <div layout="row" layout-align="center center" layout-margin>
+          <img [src]="animal.img" alt="An image of a {{animal.species}} named {{animal.name}}">
+
         </div>
       </div>
-      <div flex="33">
+      <div flex-gt-sm="50" flex-md="100">
         <div layout="row" layout-align="center center">
-          <span class="text-right pad-right" flex>Species: </span>
-          <span class="text-left text-caps" flex>{{animal.species}}</span>
-        </div>
-        <div layout="row" layout-align="center center">
-          <span class="text-right pad-right" flex>Location: </span>
-          <span class="text-left text-caps" flex>{{animal.location}}</span>
-        </div>
-        <div layout="row" layout-align="center center">
-          <span class="text-right pad-right" flex>Likes: </span>
-          <span class="text-left text-caps" flex>{{animal.likes}}</span>
-        </div>
-        <div layout="row" layout-align="center center">
-          <span class="text-right pad-right" flex>Dislikes: </span>
-          <span class="text-left text-caps" flex>{{animal.dislikes}}</span>
+          <md-chip-list flex="70" class="mat-chip-list-stacked">
+            <md-chip color="primary" selected="true">
+              <div layout="row" layout-align="space-between">
+                <span class="text-right" flex="20">Sex</span>
+                <span class="text-center" flex="5">:</span>
+                <span class="text-left text-caps" flex>{{animal.sex}}</span>
+              </div>
+            </md-chip>
+            <md-chip color="primary" selected="true">
+              <div layout="row" layout-align="space-between">
+                <span class="text-right" flex="20">Age</span>
+                <span class="text-center" flex="5">:</span>
+                <span class="text-left text-caps" flex>{{animal.age}}</span>
+              </div>
+            </md-chip>
+            <md-chip color="primary" selected="true">
+              <div layout="row" layout-align="space-between">
+                <span class="text-right" flex="20">Caretakers</span>
+                <span class="text-center" flex="5">:</span>
+                <span class="text-left text-caps" flex>{{animal.caretaker}}</span>
+              </div>
+            </md-chip>
+            <md-chip color="primary" selected="true">
+              <div layout="row" layout-align="space-between">
+                <span class="text-right" flex="20">Diet</span>
+                <span class="text-center" flex="5">:</span>
+                <span class="text-left text-caps" flex>{{animal.diet}}</span>
+              </div>
+            </md-chip>
+            <md-chip color="primary" selected="true">
+              <div layout="row" layout-align="space-between">
+                <span class="text-right" flex="20">Species</span>
+                <span class="text-center" flex="5">:</span>
+                <span class="text-left text-caps" flex>{{animal.species}}</span>
+              </div>
+            </md-chip>
+            <md-chip color="primary" selected="true">
+              <div layout="row" layout-align="space-between">
+                <span class="text-right" flex="20">Location</span>
+                <span class="text-center" flex="5">:</span>
+                <span class="text-left text-caps" flex>{{animal.location}}</span>
+              </div>
+            </md-chip>
+            <md-chip color="primary" selected="true">
+              <div layout="row" layout-align="space-between">
+                <span class="text-right" flex="20">Likes</span>
+                <span class="text-center" flex="5">:</span>
+                <span class="text-left text-caps" flex>{{animal.likes}}</span>
+              </div>
+            </md-chip>
+            <md-chip color="primary" selected="true">
+              <div layout="row" layout-align="space-between" layout-fill>
+                <span class="text-right" flex="20">Dislikes</span>
+                <span class="text-center" flex="5">:</span>
+                <span class="text-left text-caps" flex>{{animal.dislikes}}</span>
+              </div>
+            </md-chip>
+          </md-chip-list>
         </div>
       </div>
-      <div flex></div>
+      <!-- <div flex></div> -->
     </div>
   </md-card-content>
   <td-expansion-panel>

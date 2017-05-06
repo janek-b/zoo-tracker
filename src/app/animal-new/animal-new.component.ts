@@ -19,8 +19,8 @@ export class AnimalNewComponent implements OnInit {
   ngOnInit() {
   }
 
-  addAnimal(name: string, species: string, diet: string, sex: string, location: string, age: string, caretaker: string, likes: string, dislikes: string) {
-    var newAnimal: Animal = new Animal(name, species, diet, sex, location, parseInt(age), parseInt(caretaker), likes, dislikes);
+  addAnimal(name: string, species: string, diet: string, sex: string, location: string, age: string, caretaker: string, likes: string, dislikes: string, img: string) {
+    var newAnimal: Animal = new Animal(name, species, diet, sex, location, parseInt(age), parseInt(caretaker), likes, dislikes, img);
     this.animalService.saveAnimal(newAnimal);
   }
 

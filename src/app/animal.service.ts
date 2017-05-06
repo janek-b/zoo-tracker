@@ -11,7 +11,6 @@ export class AnimalService {
   }
 
   saveAnimal(animal: Animal) {
-    console.log(animal);
     this.animals.push(animal);
   }
 
