@@ -18,4 +18,8 @@ export class AnimalService {
     return this.animals;
   }
 
+  updateAnimal(animal: any) {
+    this.animals.update(animal.$key, animal);
+  }
+
 }

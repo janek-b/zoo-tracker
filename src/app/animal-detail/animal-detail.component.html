@@ -86,10 +86,10 @@
     <ng-template td-expansion-panel-label>
       Edit {{animal.name}}
     </ng-template>
-
-    <h4 class="text-caps">{{animal.name}}</h4>
-    <div layout="row">
-      <!-- Edit component -->
+    <div layout="row" layout-align="center">
+      <div flex="90">
+        <app-animal-edit [animal]="animal"></app-animal-edit>
+      </div>
     </div>
   </td-expansion-panel>
 </md-card>

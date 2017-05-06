@@ -13,6 +13,7 @@ import { AnimalNewComponent } from './animal-new/animal-new.component';
 import { AnimalListComponent } from './animal-list/animal-list.component';
 import { AnimalService } from './animal.service';
 import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
+import { AnimalEditComponent } from './animal-edit/animal-edit.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -26,7 +27,8 @@ export const firebaseConfig = {
     AppComponent,
     AnimalNewComponent,
     AnimalListComponent,
-    AnimalDetailComponent
+    AnimalDetailComponent,
+    AnimalEditComponent
   ],
   imports: [
     BrowserModule,

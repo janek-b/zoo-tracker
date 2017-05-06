@@ -1,0 +1,51 @@
+<form>
+  <div layout="row" layout-margin>
+    <md-input-container flex>
+      <input mdInput placeholder="Name" name="name" [(ngModel)]="animal.name">
+    </md-input-container>
+    <md-input-container flex>
+      <input mdInput placeholder="Species" name="species" [(ngModel)]="animal.species">
+    </md-input-container>
+  </div>
+  <div layout="row" layout-margin layout-align="space-between center">
+    <md-select flex="30" placeholder="Diet" name="diet" [(ngModel)]="animal.diet" name="diet">
+      <md-option value="carnivore">Carnivore</md-option>
+      <md-option value="herbivore">Herbivore</md-option>
+      <md-option value="omnivore">Omnivore</md-option>
+    </md-select>
+    <md-select flex="30" placeholder="Sex" name="sex" [(ngModel)]="animal.sex" name="sex">
+      <md-option value="male">Male</md-option>
+      <md-option value="female">Female</md-option>
+    </md-select>
+    <md-select flex="30" placeholder="Location" name="location" [(ngModel)]="animal.location" name="location">
+      <md-option value="great-northwest">Great Northwest</md-option>
+      <md-option value="pacific-shores">Pacific Shores</md-option>
+      <md-option value="discovery-zone">Discovery Zone</md-option>
+      <md-option value="primate-forest">Primate Forest</md-option>
+      <md-option value="elephant-lands">Elephant Lands</md-option>
+      <md-option value="africa">Africa</md-option>
+    </md-select>
+  </div>
+  <div layout="row" layout-margin layout-padding layout-align="space-between center" layout-wrap>
+    <md-input-container class="number-input-size" flex-gt-lg="15" flex-gt-xs="45">
+      <input mdInput placeholder="Age" type="number" name="age" [(ngModel)]="animal.age">
+    </md-input-container>
+    <md-input-container class="number-input-size" flex-gt-lg="15" flex-gt-xs="45">
+      <input mdInput placeholder="Number of Caretakers" type="number" name="caretaker" [(ngModel)]="animal.caretaker">
+    </md-input-container>
+    <md-input-container flex-gt-lg="30" flex-gt-xs="45">
+      <input mdInput placeholder="Likes" name="likes" [(ngModel)]="animal.likes">
+    </md-input-container>
+    <md-input-container flex-gt-lg="30" flex-gt-xs="45">
+      <input mdInput placeholder="Dislikes" name="dislikes" [(ngModel)]="animal.dislikes">
+    </md-input-container>
+  </div>
+  <div layout="row" layout-margin layout-align="space-between center">
+    <md-input-container flex>
+      <input mdInput placeholder="Image URL" name="img" [(ngModel)]="animal.img">
+    </md-input-container>
+  </div>
+  <div layout="row" layout-margin layout-align="center">
+    <button flex="70" md-raised-button color="accent" class="text-upper" (click)="updateAnimal()">Update</button>
+  </div>
+</form>
