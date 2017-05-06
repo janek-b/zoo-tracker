@@ -11,20 +11,53 @@
   <md-divider></md-divider>
   <md-card-content>
     <div layout="row" layout-align="space-around" layout-wrap>
-      <span flex="33">Age: {{animal.age}}</span>
-      <span flex="33">Diet: {{animal.diet}}</span>
-      <span flex="33">Location: {{animal.location}}</span>
-      <span flex="33">Caretakers: {{animal.caretaker}}</span>
-      <span flex="33">Sex: {{animal.sex}}</span>
-      <span flex="33">Likes: {{animal.likes}}</span>
-      <span flex="33">Dislikes: {{animal.dislikes}}</span>
+      <div flex="33">
+        <div layout="row" layout-align="center center">
+          <span class="text-right pad-right" flex>Sex: </span>
+          <span class="text-left text-caps" flex>{{animal.sex}}</span>
+        </div>
+        <div layout="row" layout-align="center center">
+          <span class="text-right pad-right" flex>Age: </span>
+          <span class="text-left text-caps" flex>{{animal.age}}</span>
+        </div>
+        <div layout="row" layout-align="center center">
+          <span class="text-right pad-right" flex>Caretakers: </span>
+          <span class="text-left text-caps" flex>{{animal.caretaker}}</span>
+        </div>
+        <div layout="row" layout-align="center center">
+          <span class="text-right pad-right" flex>Diet: </span>
+          <span class="text-left text-caps" flex>{{animal.diet}}</span>
+        </div>
+      </div>
+      <div flex="33">
+        <div layout="row" layout-align="center center">
+          <span class="text-right pad-right" flex>Species: </span>
+          <span class="text-left text-caps" flex>{{animal.species}}</span>
+        </div>
+        <div layout="row" layout-align="center center">
+          <span class="text-right pad-right" flex>Location: </span>
+          <span class="text-left text-caps" flex>{{animal.location}}</span>
+        </div>
+        <div layout="row" layout-align="center center">
+          <span class="text-right pad-right" flex>Likes: </span>
+          <span class="text-left text-caps" flex>{{animal.likes}}</span>
+        </div>
+        <div layout="row" layout-align="center center">
+          <span class="text-right pad-right" flex>Dislikes: </span>
+          <span class="text-left text-caps" flex>{{animal.dislikes}}</span>
+        </div>
+      </div>
+      <div flex></div>
     </div>
   </md-card-content>
   <td-expansion-panel>
-    <!-- <ng-template td-expansion-panel-header>
-      test
-    </ng-template> -->
+    <ng-template td-expansion-panel-label>
+      Edit {{animal.name}}
+    </ng-template>
 
     <h4 class="text-caps">{{animal.name}}</h4>
+    <div layout="row">
+      <!-- Edit component -->
+    </div>
   </td-expansion-panel>
 </md-card>
