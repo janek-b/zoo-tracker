@@ -20,4 +20,8 @@ export class AppComponent {
     this.selectedAnimal = animal;
   }
 
+  closeDetails() {
+    this.showDetails = true;
+  }
+
 }

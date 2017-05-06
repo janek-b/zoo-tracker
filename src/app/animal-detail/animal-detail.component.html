@@ -1,15 +1,30 @@
 <md-card>
-  <md-card-title>{{animal.name}}</md-card-title>
-  <md-card-subtitle>{{animal.species}}</md-card-subtitle>
+  <md-card-title>
+    <div layout="row" layout-align="space-between">
+      <span class="text-caps">{{animal.name}}</span>
+      <button md-icon-button (click)="closeDetails()">
+        <md-icon>close</md-icon>
+      </button>
+    </div>
+  </md-card-title>
+  <md-card-subtitle class="text-caps">{{animal.species}}</md-card-subtitle>
   <md-divider></md-divider>
   <md-card-content>
-    <p>Standard card with content</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+    <div layout="row" layout-align="space-around" layout-wrap>
+      <span flex="33">Age: {{animal.age}}</span>
+      <span flex="33">Diet: {{animal.diet}}</span>
+      <span flex="33">Location: {{animal.location}}</span>
+      <span flex="33">Caretakers: {{animal.caretaker}}</span>
+      <span flex="33">Sex: {{animal.sex}}</span>
+      <span flex="33">Likes: {{animal.likes}}</span>
+      <span flex="33">Dislikes: {{animal.dislikes}}</span>
+    </div>
   </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <button md-button color="accent" class="text-upper">Action</button>
-    <button md-button class="text-upper">Cancel</button>
-  </md-card-actions>
+  <td-expansion-panel>
+    <!-- <ng-template td-expansion-panel-header>
+      test
+    </ng-template> -->
+
+    <h4 class="text-caps">{{animal.name}}</h4>
+  </td-expansion-panel>
 </md-card>

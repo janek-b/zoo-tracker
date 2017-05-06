@@ -29,7 +29,7 @@
 <div layout="row" layout-align="center">
   <div flex="90" [tdToggle]="showDetails">
     <div *ngIf="selectedAnimal">
-      <app-animal-detail [animal]="selectedAnimal"></app-animal-detail>
+      <app-animal-detail [animal]="selectedAnimal" (closeDetailsSender)="closeDetails()"></app-animal-detail>
     </div>
   </div>
 </div>

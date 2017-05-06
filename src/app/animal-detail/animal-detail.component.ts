@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Animal } from '../animal.model';
 
 @Component({
@@ -8,10 +8,15 @@ import { Animal } from '../animal.model';
 })
 export class AnimalDetailComponent implements OnInit {
   @Input() animal: Animal;
+  @Output() closeDetailsSender = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  closeDetails() {
+    this.closeDetailsSender.emit();
   }
 
 }
