@@ -20,7 +20,7 @@
       (sortChange)="sort($event)">
       <ng-template tdDataTableTemplate="name" let-value="value" let-row="row" let-column="column">
         <div layout="row" layout-align="center center">
-          <button md-icon-button color="accent" (click)="showDetails(row)"><md-icon>pets</md-icon></button>
+          <button md-icon-button color="accent" (click)="showAnimalDetails(row)"><md-icon>pets</md-icon></button>
           <span flex>{{value}}</span>
         </div>
       </ng-template>
@@ -40,5 +40,13 @@
         <md-list-item>Total # of animals {{animals.length}}</md-list-item>
       </md-list>
     </md-card>
+  </div>
+</div>
+
+<div layout="row" layout-align="center">
+  <div flex [tdToggle]="showDetails">
+    <div *ngIf="selectedAnimal">
+      <app-animal-detail [animal]="selectedAnimal" (closeDetailsSender)="closeDetails()"></app-animal-detail>
+    </div>
   </div>
 </div>

@@ -19,4 +19,11 @@ export class AnimalDetailComponent implements OnInit {
     this.closeDetailsSender.emit();
   }
 
+  testScroll() {
+    var element = document.getElementById("test");
+    setTimeout(function() {
+      element.scrollIntoView(false)
+    }, 150)
+  }
+
 }

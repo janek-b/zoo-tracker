@@ -81,9 +81,10 @@
       </div>
     </div>
   </md-card-content>
-  <td-expansion-panel #editPanel>
+  <td-expansion-panel #editPanel (expanded)="testScroll()">
     <ng-template td-expansion-panel-label>
-      Edit {{animal.name}}
+      <span >
+      Edit {{animal.name}}</span>
     </ng-template>
     <div layout="row" layout-align="center">
       <div flex="90">
@@ -92,3 +93,4 @@
     </div>
   </td-expansion-panel>
 </md-card>
+<span id="test"></span>

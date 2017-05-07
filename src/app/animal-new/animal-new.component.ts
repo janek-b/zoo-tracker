@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Animal } from '../animal.model';
 import { AnimalService } from '../animal.service';
 
@@ -8,7 +8,6 @@ import { AnimalService } from '../animal.service';
   styleUrls: ['./animal-new.component.css']
 })
 export class AnimalNewComponent implements OnInit {
-  @Output() closeFormSender = new EventEmitter();
 
   diet: string;
   sex: string;
@@ -22,10 +21,6 @@ export class AnimalNewComponent implements OnInit {
   addAnimal(name: string, species: string, diet: string, sex: string, location: string, age: string, caretaker: string, likes: string, dislikes: string, img: string) {
     var newAnimal: Animal = new Animal(name, species, diet, sex, location, parseInt(age), parseInt(caretaker), likes, dislikes, img);
     this.animalService.saveAnimal(newAnimal);
-  }
-
-  closeForm() {
-    this.closeFormSender.emit();
   }
 
 }

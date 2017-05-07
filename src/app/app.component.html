@@ -1,42 +1,43 @@
-<!-- <td-layout-nav toolbarTitle="Zoo Tracker" icon="menu" color="primary">
-  <div td-toolbar-content>
-    <md-nav-list>
-      <button md-list-item (click)="toggleNewAnimal()">
-        <md-icon>settings</md-icon>
-        <span>Add an Animal</span>
-      </button>
-    </md-nav-list>
+<td-layout-nav-list #navList mode="side" opened="false">
+
+  <div td-sidenav-toolbar-content layout="row" flex layout-align="space-between center">
+    <span>Menu</span>
+    <button md-icon-button (click)="navList.close()">
+      <md-icon>arrow_forward</md-icon>
+    </button>
   </div>
 
-  <div layout="row" layout-align="center">
-    <div flex="80" [tdToggle]="showNewAnimal">
-      <app-animal-new (closeFormSender)="toggleNewAnimal()"></app-animal-new>
-    </div>
+  <md-nav-list td-sidenav-content>
+    <a md-list-item (click)="navList.close()" routerLink=''>
+      <md-icon>list</md-icon>
+      <span>All Animals</span>
+    </a>
+    <a md-list-item (click)="navList.close()" routerLink='new'>
+      <md-icon>add_circle_outline</md-icon>
+      <span>Add an Animal</span>
+    </a>
+  </md-nav-list>
+
+  <div td-toolbar-content layout="row" flex>
+    <span>Zoo Tracker</span>
+    <span flex></span>
   </div>
 
   <div layout="row" layout-align="center">
     <div flex="90">
-      <app-animal-list (animalDetailSender)="showAnimalDetails($event)"></app-animal-list>
+      <router-outlet></router-outlet>
     </div>
   </div>
-
-
-  <div layout="row" layout-align="center">
-    <div flex="90" [tdToggle]="showDetails">
-      <div *ngIf="selectedAnimal">
-        <app-animal-detail [animal]="selectedAnimal" (closeDetailsSender)="closeDetails()"></app-animal-detail>
-      </div>
-    </div>
-  </div>
-
 
   <td-layout-footer>
-    footer
+    <div layout="row" layout-align="space-between center">
+      <span>Zoo Tracker</span>
+      <a href="https://github.com/janek-b" id="link"><i class="fa fa-github fa-lg" aria-hidden="true"></i><span class="sr-only">Link to Gitub</span></a>
+    </div>
   </td-layout-footer>
-</td-layout-nav> -->
+</td-layout-nav-list>
 
-
-
+<!--
 <md-toolbar color="primary">
   <button md-icon-button [mdMenuTriggerFor]="navMenu">
     <md-icon>menu</md-icon>
@@ -70,4 +71,4 @@
       <app-animal-detail [animal]="selectedAnimal" (closeDetailsSender)="closeDetails()"></app-animal-detail>
     </div>
   </div>
-</div>
+</div> -->

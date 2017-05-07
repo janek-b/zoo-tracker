@@ -13,6 +13,9 @@ import { IPageChangeEvent } from '@covalent/core';
 export class AnimalListComponent implements OnInit {
   @Output() animalDetailSender = new EventEmitter();
 
+  showDetails: boolean = true;
+  selectedAnimal: Animal = null;
+
   animals: Animal[] = [];
   species: string[] = [];
 
@@ -74,8 +77,14 @@ export class AnimalListComponent implements OnInit {
     this.filteredData = newData;
  }
 
-  showDetails(animal: Animal) {
-    this.animalDetailSender.emit(animal);
+  showAnimalDetails(animal: Animal) {
+    this.showDetails = false;
+    this.selectedAnimal = animal;
+    // this.animalDetailSender.emit(animal);
+  }
+
+  closeDetails() {
+    this.showDetails = true;
   }
 
 

@@ -14,6 +14,7 @@ import { AnimalListComponent } from './animal-list/animal-list.component';
 import { AnimalService } from './animal.service';
 import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
 import { AnimalEditComponent } from './animal-edit/animal-edit.component';
+import { routing } from './app.routing';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -34,6 +35,7 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
+    routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
