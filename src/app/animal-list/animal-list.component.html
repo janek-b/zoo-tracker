@@ -39,11 +39,6 @@
       <h3 class="subhead text-center pad-sm">Number of Animals by Category</h3>
       <md-divider></md-divider>
       <td-expansion-panel label="Diet">
-        <!-- <div layout="row">
-          <h4 class="subhead pad-left-sm">Type of diet</h4>
-          <h4 flex class="subhead pad-right-sm text-right">Number of animals</h4>
-        </div> -->
-        <!-- <h4><small><span clas="text-left">Type of diet</span><span class="text-right">Number of animals</span></small></h4> -->
         <md-list>
           <md-list-item *ngFor="let diet of diets" layout="row" layout-align="spece-between">
             <span flex class="text-caps">{{diet}}:</span>
