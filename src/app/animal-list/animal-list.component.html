@@ -36,6 +36,25 @@
   </div>
   <div flex="20">
     <md-card>
+
+      <td-expansion-panel label="Diet">
+        <md-list>
+          <md-list-item layout="row" layout-align="spece-between">
+            <span flex>Carnivores:</span>
+            <span flex class="text-right">{{animals | diet:'carnivore'}}</span>
+          </md-list-item>
+          <md-list-item layout="row" layout-align="spece-between">
+            <span flex>Herbivores:</span>
+            <span flex class="text-right">{{animals | diet:'herbivore'}}</span>
+          </md-list-item>
+          <md-list-item layout="row" layout-align="spece-between">
+            <span flex>Omnivores:</span>
+            <span flex class="text-right">{{animals | diet:'omnivore'}}</span>
+          </md-list-item>
+        </md-list>
+      </td-expansion-panel>
+      <!-- BreakDown by location -->
+      <!-- BreakDown by species -->
       <md-list>
         <md-list-item>Total # of animals {{animals.length}}</md-list-item>
       </md-list>
