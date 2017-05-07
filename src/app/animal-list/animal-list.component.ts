@@ -48,7 +48,6 @@ export class AnimalListComponent implements OnInit {
     this.animalService.getAnimals().subscribe(animalData => {
       this.animals = animalData;
       this.species = animalData.map(animal => animal.species).filter((val, index, arr) => arr.indexOf(val) === index);
-      console.log(this.species);
       this.filter();
     });
     this.locations = this.animalService.getLocations();
