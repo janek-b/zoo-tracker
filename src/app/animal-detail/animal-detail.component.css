@@ -4,5 +4,9 @@ img {
 }
 
 md-chip > div > span:first-child {
-  min-width: 60px;
+  min-width: 78px;
+}
+
+md-chip > div {
+  font-size: 1rem;
 }

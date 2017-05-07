@@ -13,7 +13,8 @@ import { IPageChangeEvent } from '@covalent/core';
 export class AnimalListComponent implements OnInit {
   @Output() animalDetailSender = new EventEmitter();
 
-  animals: Animal[] = []
+  animals: Animal[] = [];
+  species: string[] = [];
 
   columns: ITdDataTableColumn[] = [
     { name: 'name', label: 'Name'},
@@ -40,6 +41,8 @@ export class AnimalListComponent implements OnInit {
   ngOnInit() {
     this.animalService.getAnimals().subscribe(animalData => {
       this.animals = animalData;
+      this.species = animalData.map(animal => animal.species).filter((val, index, arr) => arr.indexOf(val) === index);
+      console.log(this.species);
       this.filter();
     })
   }
