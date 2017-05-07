@@ -19,6 +19,9 @@ export class AnimalListComponent implements OnInit {
   animals: Animal[] = [];
   species: string[] = [];
 
+  locations: string[];
+  diets: string[];
+
   columns: ITdDataTableColumn[] = [
     { name: 'name', label: 'Name'},
     { name: 'species', label: 'Species' },
@@ -47,7 +50,9 @@ export class AnimalListComponent implements OnInit {
       this.species = animalData.map(animal => animal.species).filter((val, index, arr) => arr.indexOf(val) === index);
       console.log(this.species);
       this.filter();
-    })
+    });
+    this.locations = this.animalService.getLocations();
+    this.diets = this.animalService.getDiets();
   }
 
   sort(sortEvent: ITdDataTableSortChangeEvent): void {

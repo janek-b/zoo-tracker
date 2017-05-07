@@ -6,6 +6,9 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class AnimalService {
   animals: FirebaseListObservable<any>;
 
+  diets: string[] = ['carnivore', 'herbivore', 'omnivore'];
+  locations: string[] = ['great northwest', 'pacific shores', 'discovery zone', 'primate forest', 'elephant lands', 'africa'];
+
   constructor(public db: AngularFireDatabase) {
     this.animals = db.list('/animals');
   }
@@ -20,6 +23,14 @@ export class AnimalService {
 
   updateAnimal(animal: any) {
     this.animals.update(animal.$key, animal);
+  }
+
+  getDiets() {
+    return this.diets;
+  }
+
+  getLocations() {
+    return this.locations;
   }
 
 }
