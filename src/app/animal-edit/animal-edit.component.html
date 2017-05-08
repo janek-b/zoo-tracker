@@ -9,21 +9,14 @@
   </div>
   <div layout="row" layout-margin layout-align="space-between center">
     <md-select flex="30" placeholder="Diet" name="diet" [(ngModel)]="animal.diet" name="diet">
-      <md-option value="carnivore">Carnivore</md-option>
-      <md-option value="herbivore">Herbivore</md-option>
-      <md-option value="omnivore">Omnivore</md-option>
+      <md-option *ngFor="let diet of diets" class="text-caps" [value]="diet">{{diet}}</md-option>
     </md-select>
     <md-select flex="30" placeholder="Sex" name="sex" [(ngModel)]="animal.sex" name="sex">
-      <md-option value="male">Male</md-option>
-      <md-option value="female">Female</md-option>
+      <md-option value="Male">Male</md-option>
+      <md-option value="Female">Female</md-option>
     </md-select>
     <md-select flex="30" placeholder="Location" name="location" [(ngModel)]="animal.location" name="location">
-      <md-option value="great-northwest">Great Northwest</md-option>
-      <md-option value="pacific-shores">Pacific Shores</md-option>
-      <md-option value="discovery-zone">Discovery Zone</md-option>
-      <md-option value="primate-forest">Primate Forest</md-option>
-      <md-option value="elephant-lands">Elephant Lands</md-option>
-      <md-option value="africa">Africa</md-option>
+      <md-option *ngFor="let location of locations" class="text-caps" [value]="location">{{location}}</md-option>
     </md-select>
   </div>
   <div layout="row" layout-margin layout-padding layout-align="space-between center" layout-wrap>

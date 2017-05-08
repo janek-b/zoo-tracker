@@ -9,51 +9,51 @@
   </md-card-title>
   <md-divider></md-divider>
   <md-card-content>
-    <form>
+    <form [formGroup]="animalForm" novalidate>
       <div layout="row" layout-margin>
         <md-input-container flex>
-          <input mdInput placeholder="Name" #newName>
+          <input mdInput placeholder="Name" formControlName="name">
         </md-input-container>
+
         <md-input-container flex>
-          <input mdInput placeholder="Species" #newSpecies>
+          <input type="text" mdInput [mdAutocomplete]="autoSpecies" placeholder="Species" formControlName="species">
         </md-input-container>
+        <md-autocomplete #autoSpecies="mdAutocomplete">
+          <md-option *ngFor="let option of filteredSpecies | async" [value]="option">
+            {{option}}
+          </md-option>
+        </md-autocomplete>
+
       </div>
       <div layout="row" layout-margin layout-align="space-between center">
-        <md-select flex="30" placeholder="Diet" [(ngModel)]="diet" name="diet">
-          <md-option value="carnivore">Carnivore</md-option>
-          <md-option value="herbivore">Herbivore</md-option>
-          <md-option value="omnivore">Omnivore</md-option>
+        <md-select flex="30" placeholder="Diet" formControlName="diet">
+          <md-option *ngFor="let diet of diets" class="text-caps" [value]="diet">{{diet}}</md-option>
         </md-select>
-        <md-select flex="30" placeholder="Sex" [(ngModel)]="sex" name="sex">
-          <md-option value="male">Male</md-option>
-          <md-option value="female">Female</md-option>
+        <md-select flex="30" placeholder="Sex" formControlName="sex">
+          <md-option value="Male">Male</md-option>
+          <md-option value="Female">Female</md-option>
         </md-select>
-        <md-select flex="30" placeholder="Location" [(ngModel)]="location" name="location">
-          <md-option value="great-northwest">Great Northwest</md-option>
-          <md-option value="pacific-shores">Pacific Shores</md-option>
-          <md-option value="discovery-zone">Discovery Zone</md-option>
-          <md-option value="primate-forest">Primate Forest</md-option>
-          <md-option value="elephant-lands">Elephant Lands</md-option>
-          <md-option value="africa">Africa</md-option>
+        <md-select flex="30" placeholder="Location" formControlName="location">
+          <md-option *ngFor="let location of locations" class="text-caps" [value]="location">{{location}}</md-option>
         </md-select>
       </div>
       <div layout="row" layout-margin layout-padding layout-align="space-between center" layout-wrap>
         <md-input-container class="number-input-size" flex-gt-lg="15" flex-gt-xs="45">
-          <input mdInput placeholder="Age" type="number" #newAge>
+          <input mdInput placeholder="Age" type="number" formControlName="age">
         </md-input-container>
         <md-input-container class="number-input-size" flex-gt-lg="15" flex-gt-xs="45">
-          <input mdInput placeholder="Number of Caretakers" type="number" #newCaretaker>
+          <input mdInput placeholder="Number of Caretakers" type="number" formControlName="caretaker">
         </md-input-container>
         <md-input-container flex-gt-lg="30" flex-gt-xs="45">
-          <input mdInput placeholder="Likes" #newLikes>
+          <input mdInput placeholder="Likes" formControlName="likes">
         </md-input-container>
         <md-input-container flex-gt-lg="30" flex-gt-xs="45">
-          <input mdInput placeholder="Dislikes" #newDislikes>
+          <input mdInput placeholder="Dislikes" formControlName="dislikes">
         </md-input-container>
       </div>
       <div layout="row" layout-margin layout-align="space-between center">
         <md-input-container flex>
-          <input mdInput placeholder="Image URL" #newImg>
+          <input mdInput placeholder="Image URL" formControlName="img">
         </md-input-container>
       </div>
     </form>
@@ -61,7 +61,7 @@
   <md-divider></md-divider>
   <md-card-actions>
     <div layout="row" layout-margin layout-align="center">
-      <button flex='70' md-raised-button color="accent" class="text-upper" (click)="addAnimal(newName.value, newSpecies.value, diet, sex, location, newAge.value, newCaretaker.value, newLikes.value, newDislikes.value, newImg.value); newName.value=''; newSpecies.value=''; diet=null; sex=null; location=null; newAge.value=''; newCaretaker.value=''; newLikes.value=''; newDislikes.value=''; newImg.value='';">Add Animal</button>
+      <button flex='70' md-raised-button color="accent" class="text-upper" (click)="addAnimal()">Add Animal</button>
     </div>
   </md-card-actions>
 </md-card>

@@ -11,9 +11,14 @@ export class AnimalEditComponent implements OnInit {
   @Input() animal: Animal;
   @Output() closeEditSender = new EventEmitter();
 
+  locations: string[];
+  diets: string[];
+
   constructor(private animalService: AnimalService) { }
 
   ngOnInit() {
+    this.locations = this.animalService.getLocations();
+    this.diets = this.animalService.getDiets();
   }
 
   updateAnimal() {

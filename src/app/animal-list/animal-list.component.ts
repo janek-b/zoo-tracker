@@ -84,7 +84,6 @@ export class AnimalListComponent implements OnInit {
   showAnimalDetails(animal: Animal) {
     this.showDetails = false;
     this.selectedAnimal = animal;
-    // this.animalDetailSender.emit(animal);
   }
 
   closeDetails() {

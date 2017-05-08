@@ -7,7 +7,7 @@ import { Animal } from './animal.model';
 export class LocationPipe implements PipeTransform {
 
   transform(input: Animal[], location: string): any {
-    return input.filter(animal => animal.location === location.replace(/ /g, '-')).length
+    return input.filter(animal => animal.location === location).length
   }
 
 }

@@ -6,8 +6,8 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class AnimalService {
   animals: FirebaseListObservable<any>;
 
-  diets: string[] = ['carnivore', 'herbivore', 'omnivore'];
-  locations: string[] = ['great northwest', 'pacific shores', 'discovery zone', 'primate forest', 'elephant lands', 'africa'];
+  diets: string[] = ['Carnivore', 'Herbivore', 'Omnivore'];
+  locations: string[] = ['Great Northwest', 'Pacific Shores', 'Discovery Zone', 'Primate Forest', 'Elephant Lands', 'Africa'];
 
   constructor(public db: AngularFireDatabase) {
     this.animals = db.list('/animals');
