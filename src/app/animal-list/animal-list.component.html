@@ -38,27 +38,48 @@
     <md-card>
       <h3 class="subhead text-center pad-sm">Number of Animals by Category</h3>
       <md-divider></md-divider>
-      <td-expansion-panel label="Diet">
+      <td-expansion-panel #dietPanel>
+        <ng-template td-expansion-panel-header>
+          <div layout="row" layout-align="space-between center" class="pad-left-sm pad-right-sm bgc-blue-grey-500">
+            <p class="md-title">Diet</p>
+            <md-icon *ngIf="!dietPanel.expand">expand_more</md-icon>
+            <md-icon *ngIf="dietPanel.expand">expand_less</md-icon>
+          </div>
+        </ng-template>
         <md-list>
           <md-list-item *ngFor="let diet of diets" layout="row" layout-align="spece-between">
-            <span flex class="text-caps">{{diet}}:</span>
-            <span flex class="text-right">{{animals | diet:diet}}</span>
+            <span flex class="text-caps md-body-2">{{diet}}:</span>
+            <span flex class="text-right md-body-2">{{animals | diet:diet}}</span>
           </md-list-item>
         </md-list>
       </td-expansion-panel>
-      <td-expansion-panel label="Location">
+      <td-expansion-panel #locationPanel>
+        <ng-template td-expansion-panel-header>
+          <div layout="row" layout-align="space-between center" class="pad-left-sm pad-right-sm bgc-blue-grey-500">
+            <p class="md-title">Location</p>
+            <md-icon *ngIf="!locationPanel.expand">expand_more</md-icon>
+            <md-icon *ngIf="locationPanel.expand">expand_less</md-icon>
+          </div>
+        </ng-template>
         <md-list>
           <md-list-item *ngFor="let location of locations" layout="row" layout-align="spece-between">
-            <span flex class="text-caps">{{location}}:</span>
-            <span flex class="text-right">{{animals | location:location}}</span>
+            <span flex class="text-caps md-body-2">{{location}}:</span>
+            <span flex class="text-right md-body-2">{{animals | location:location}}</span>
           </md-list-item>
         </md-list>
       </td-expansion-panel>
-      <td-expansion-panel label="Species">
+      <td-expansion-panel #speciesPanel>
+        <ng-template td-expansion-panel-header>
+          <div layout="row" layout-align="space-between center" class="pad-left-sm pad-right-sm bgc-blue-grey-500">
+            <p class="md-title">Species</p>
+            <md-icon *ngIf="!speciesPanel.expand">expand_more</md-icon>
+            <md-icon *ngIf="speciesPanel.expand">expand_less</md-icon>
+          </div>
+        </ng-template>
         <md-list>
           <md-list-item *ngFor="let eachSpecies of species" layout="row" layout-align="spece-between">
-            <span flex class="text-caps">{{eachSpecies}}:</span>
-            <span flex class="text-right">{{animals | species:eachSpecies}}</span>
+            <span flex class="text-caps md-body-2">{{eachSpecies}}:</span>
+            <span flex class="text-right md-body-2">{{animals | species:eachSpecies}}</span>
           </md-list-item>
         </md-list>
       </td-expansion-panel>
