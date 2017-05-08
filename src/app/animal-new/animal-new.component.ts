@@ -47,7 +47,7 @@ export class AnimalNewComponent implements OnInit {
   }
 
   filterSpecies(val: string): string[] {
-    return this.species.filter(option => new RegExp(`^${val}`, 'gi').test(option));
+    return this.species.filter(option => new RegExp(`^.*${val}`, 'gi').test(option));
   }
 
 
